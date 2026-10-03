@@ -1,6 +1,6 @@
 const A={"name": "Republic State Railways", "preset": "red", "phone": "1-800-RSR-333", "email": "hello@citymetro.xyz"};
 const c=(s,n)=>String(s||'').slice(0,n);
-export async function onRequestPost({request,env}){
+async function wallet(request,env){
   let b;try{b=await request.json()}catch{return Response.json({error:'Bad request'},{status:400})}
   const body={logoText:A.name,organizationName:A.name,colorPreset:A.preset,expirationDays:1,sharingProhibited:true,
     barcodeFormat:'QR',barcodeValue:c(b.code,60)+'|'+c(b.from,40)+'|'+c(b.to,40)+'|'+c(b.type,20)+'|'+(+b.riders||1),barcodeAltText:c(b.code,60),
@@ -13,3 +13,14 @@ export async function onRequestPost({request,env}){
   if(!r.ok)return Response.json({error:j.error||'Wallet service error'},{status:502});
   return Response.json({googleSaveUrl:j.googleSaveUrl,shareUrl:j.shareUrl});
 }
+
+export default {
+  async fetch(request, env) {
+    const { pathname } = new URL(request.url);
+    if (pathname === '/api/wallet') {
+      if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
+      return wallet(request, env);
+    }
+    return env.ASSETS.fetch(request);
+  }
+};
