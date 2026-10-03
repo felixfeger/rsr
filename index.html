@@ -1,0 +1,67 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Republic State Railways</title><link rel="icon" href="https://alerts.citymetro.xyz/logo.png">
+<style>
+:root{--a:#c8102e;--ink:#111;--mut:#666;--bd:#e6e6e6;--bg:#f5f5f7}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:Helvetica,Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--bd)}
+.bar{max-width:1080px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700}.brand img{height:36px;width:auto}
+.sw{display:flex;gap:6px;margin-left:auto}.sw a{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;background:var(--bg)}
+.sw a.on{background:var(--a);color:#fff}
+#burger{display:none;margin-left:auto;background:var(--bg);border:0;border-radius:12px;width:44px;height:44px;font-size:22px;cursor:pointer}
+main{max-width:1080px;margin:auto;padding:24px 20px 60px}
+.hero{background:var(--a);color:#fff;border-radius:28px;padding:48px 32px}.hero h1{margin:0 0 8px;font-size:clamp(28px,5vw,46px)}.hero p{margin:0;opacity:.9;max-width:560px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.card h3{margin:0 0 6px}.card p{margin:0;color:var(--mut)}
+h2{margin:36px 0 0}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;align-items:end}
+label{font-size:13px;font-weight:600;color:var(--mut);display:block;margin-bottom:4px}
+select,input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:12px;font:inherit;background:#fff}
+.btn{display:inline-block;padding:13px 20px;border:0;border-radius:12px;background:var(--a);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-align:center}
+.btn.k{background:#111}.btn[disabled]{opacity:.5}
+#tk{display:none;margin-top:20px;text-align:center}#qr{display:inline-block;padding:14px;border:1px solid var(--bd);border-radius:20px;margin:14px 0}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}#msg{color:var(--mut);font-size:14px;margin-top:10px}
+footer{border-top:1px solid var(--bd);padding:24px 20px;text-align:center;color:var(--mut);font-size:14px}
+@media(max-width:720px){#burger{display:block}.sw{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--bd);padding:12px 20px 16px;flex-direction:column;border-radius:0 0 20px 20px}.sw.open{display:flex}.sw a{padding:14px;font-size:16px}.hero{padding:32px 22px}}
+</style></head><body>
+<header><div class="bar"><a class="brand" href="/"><img src="https://alerts.citymetro.xyz/logo.png" alt="logo"><span>Republic State Railways</span></a>
+<button id="burger" aria-label="Menu" aria-expanded="false">☰</button>
+<nav class="sw" id="nav"><a href="https://rsr.citymetro.xyz" class="on">Republic State Railways</a><a href="https://metrolink.citymetro.xyz" class="">City MetroLink</a><a href="https://mnrr.citymetro.xyz" class="">Metro-North RR</a></nav></div></header>
+<main>
+<section class="hero"><h1>Republic State Railways</h1><p>Intercity rail connecting the Republic’s cities, coast to capital.</p></section>
+<h2 id="ticket">Get a ticket</h2>
+<div class="card" style="margin-top:14px"><form id="f">
+<div><label>From</label><select id="from"></select></div><div><label>To</label><select id="to"></select></div>
+<div><label>Fare</label><select id="type"><option>One-way</option><option>Round trip</option><option>Day pass</option></select></div>
+<div><label>Riders</label><input id="n" type="number" min="1" max="6" value="1"></div>
+<div><button class="btn" type="submit">Generate ticket</button></div></form>
+<div id="msg"></div>
+<div id="tk"><h3 id="rt" style="margin:0"></h3><div id="meta" style="color:#666"></div><div id="qr"></div><div id="code" style="font-family:monospace;font-size:13px;color:#666"></div>
+<div class="row" style="margin-top:14px"><button class="btn k" id="ap">Add to Apple Wallet</button><button class="btn k" id="gp">Add to Google Wallet</button></div></div></div>
+<h2>Plan your trip</h2>
+<div class="grid"><div class="card"><h3>Service alerts</h3><p>Live status for every line, updated around the clock.</p></div><div class="card"><h3>Schedules</h3><p>Weekday, weekend and holiday timetables.</p></div><div class="card"><h3>Fares</h3><p>One-way, round trip and day pass options.</p></div><div class="card"><h3>Accessibility</h3><p>Step-free access, assistance and priority seating.</p></div></div>
+<h2 id="support">Support</h2>
+<div class="grid"><div class="card"><h3>Call us</h3><p><a href="tel:+18007277333"><b>1-800-RSR-333</b></a></p></div><div class="card"><h3>Email</h3><p><a href="mailto:rsr-support@citymetro.xyz"><b>rsr-support@citymetro.xyz</b></a></p></div></div>
+</main><footer>© Republic State Railways · Part of City Metro · <a href="https://alerts.citymetro.xyz">Service alerts</a></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const S=["Republic Central", "Harbor City", "Lakeshore", "Capitol Junction", "Pine Ridge", "Westfield"],K="RSR",$=i=>document.getElementById(i);
+$('burger').onclick=()=>{const o=$('nav').classList.toggle('open');$('burger').setAttribute('aria-expanded',o);$('burger').textContent=o?'✕':'☰'};
+for(const s of S){$('from').add(new Option(s));$('to').add(new Option(s))}$('to').selectedIndex=1;
+let T=null;
+$('f').onsubmit=e=>{e.preventDefault();const a=$('from').value,b=$('to').value,m=$('msg');
+if(a===b){m.textContent='Choose two different stations.';return}m.textContent='';
+const r=crypto.getRandomValues(new Uint32Array(2)),id=K+'-'+r[0].toString(36).toUpperCase()+r[1].toString(36).toUpperCase(),
+d=new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+T={from:a,to:b,type:$('type').value,riders:+$('n').value,date:d,code:id};
+$('rt').textContent=a+' → '+b;$('meta').textContent=T.type+' · '+T.riders+' rider'+(T.riders>1?'s':'')+' · '+d;
+$('qr').innerHTML='';new QRCode($('qr'),{text:id+'|'+a+'|'+b+'|'+T.type+'|'+T.riders,width:200,height:200});
+$('code').textContent=id;$('tk').style.display='block';$('tk').scrollIntoView({behavior:'smooth'})};
+async function wallet(kind){const m=$('msg');m.textContent='Creating wallet pass…';
+try{const r=await fetch('/api/wallet',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(T)});
+const j=await r.json();if(!r.ok)throw new Error(j.error||'Failed');m.textContent='';
+location.href=kind==='g'?j.googleSaveUrl:j.shareUrl}catch(x){m.textContent='Could not create wallet pass: '+x.message}}
+$('ap').onclick=()=>wallet('a');$('gp').onclick=()=>wallet('g');
+</script></body></html>
