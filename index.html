@@ -1,63 +1,92 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Republic State Railways</title><link rel="icon" href="https://alerts.citymetro.xyz/logo.png">
-<style>
-:root{--a:#c8102e;--ink:#111;--mut:#666;--bd:#e6e6e6;--bg:#f5f5f7}
-*{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font-family:Helvetica,Arial,sans-serif;line-height:1.5}
-a{color:inherit;text-decoration:none}
-header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--bd)}
-.bar{max-width:1080px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700}.brand img{height:36px;width:auto}
-.sw{display:flex;gap:6px;margin-left:auto}.sw a{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:600;background:var(--bg)}
-.sw a.on{background:var(--a);color:#fff}
-#burger{display:none;margin-left:auto;background:var(--bg);border:0;border-radius:12px;width:44px;height:44px;font-size:22px;cursor:pointer}
-main{max-width:1080px;margin:auto;padding:24px 20px 60px}
-.hero{background:var(--a);color:#fff;border-radius:28px;padding:48px 32px}.hero h1{margin:0 0 8px;font-size:clamp(28px,5vw,46px)}.hero p{margin:0;opacity:.9;max-width:560px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
-.card{background:#fff;border:1px solid var(--bd);border-radius:20px;padding:22px;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.card h3{margin:0 0 6px}.card p{margin:0;color:var(--mut)}
-h2{margin:36px 0 0}
-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;align-items:end}
-label{font-size:13px;font-weight:600;color:var(--mut);display:block;margin-bottom:4px}
-select,input{width:100%;padding:12px;border:1px solid var(--bd);border-radius:12px;font:inherit;background:#fff}
-.btn{display:inline-block;padding:13px 20px;border:0;border-radius:12px;background:var(--a);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-align:center}
-.btn.k{background:#111}.btn[disabled]{opacity:.5}
-#tk{display:none;margin-top:20px;text-align:center}#qr{display:inline-block;padding:14px;border:1px solid var(--bd);border-radius:20px;margin:14px 0}
-.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}#msg{color:var(--mut);font-size:14px;margin-top:10px}
-footer{border-top:1px solid var(--bd);padding:24px 20px;text-align:center;color:var(--mut);font-size:14px}
-@media(max-width:720px){#burger{display:block}.sw{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--bd);padding:12px 20px 16px;flex-direction:column;border-radius:0 0 20px 20px}.sw.open{display:flex}.sw a{padding:14px;font-size:16px}.hero{padding:32px 22px}}
+<title>Republic State Railways</title><link rel="icon" href="https://alerts.citymetro.xyz/logo.png"><style>
+:root{--a:#c8102e;--d:#6e0a1b;--ink:#111827;--mut:#6b7280;--bd:#e5e7eb;--bg:#f6f7f9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:Helvetica,Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}h2{font-size:26px;margin:0 0 6px}.sub{color:var(--mut);margin:0 0 20px}
+.util{background:#0f172a;color:#cbd5e1;font-size:13px}.util .in{max-width:1120px;margin:auto;padding:8px 20px;display:flex;gap:18px;align-items:center}
+.util .sw{display:flex;gap:4px}.util .sw a{padding:5px 12px;border-radius:999px;font-weight:600}.util .sw a.on{background:#fff;color:#0f172a}.util .sw a:not(.on):hover{background:#1e293b}
+.util .r{margin-left:auto;display:flex;gap:18px}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--bd)}
+.bar{max-width:1120px;margin:auto;padding:12px 20px;display:flex;align-items:center;gap:28px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:700;font-size:18px;letter-spacing:-.2px}.brand img{height:40px;width:auto}
+.nav{display:flex;gap:6px;margin-left:auto}.nav a{padding:9px 14px;border-radius:999px;font-weight:600;font-size:15px}.nav a:hover{background:var(--bg)}.nav .cta{background:var(--a);color:#fff}
+.mob{display:none}#burger{display:none;margin-left:auto;background:var(--bg);border:0;border-radius:12px;width:44px;height:44px;font-size:22px;cursor:pointer}
+.hero{background:linear-gradient(135deg,var(--a),var(--d));color:#fff;position:relative;overflow:hidden}
+.hero .in{max-width:1120px;margin:auto;padding:64px 20px 120px;position:relative;z-index:1}
+.eb{display:inline-block;background:rgba(255,255,255,.18);border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.hero h1{font-size:clamp(34px,6vw,60px);line-height:1.05;margin:16px 0 12px;letter-spacing:-1.5px;max-width:700px}.hero p{font-size:18px;opacity:.9;max-width:520px;margin:0 0 24px}
+.hero svg{position:absolute;right:-20px;bottom:0;width:min(780px,100%);opacity:.16}
+.btn{display:inline-block;padding:14px 22px;border:0;border-radius:14px;background:var(--a);color:#fff;font:inherit;font-weight:700;cursor:pointer;text-align:center}.btn.w{background:#fff;color:var(--d)}.btn.o{background:rgba(255,255,255,.15);color:#fff;margin-left:8px}.btn.k{background:#111;border-radius:999px;padding:12px 20px}.btn[disabled]{opacity:.5}
+main{max-width:1120px;margin:auto;padding:0 20px 40px}section{margin-top:56px}
+.book{margin-top:-80px;position:relative;z-index:2;background:#fff;border-radius:24px;padding:26px;box-shadow:0 20px 50px rgba(15,23,42,.16);border:1px solid var(--bd)}
+.book h2{font-size:22px}form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;align-items:end}
+label{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:6px}
+select,input{width:100%;padding:14px;border:1px solid var(--bd);border-radius:14px;font:inherit;background:var(--bg)}select:focus,input:focus{outline:2px solid var(--a);background:#fff}
+#msg{color:#b91c1c;font-size:14px;margin-top:10px}
+#tk{display:none;margin-top:22px}.ticket{display:flex;border:1px solid var(--bd);border-radius:22px;overflow:hidden;background:linear-gradient(#fff,var(--bg))}
+.tl{flex:1;padding:24px}.tl .ln{display:inline-block;background:var(--a);color:#fff;border-radius:999px;padding:4px 12px;font-size:12px;font-weight:700}.tl h3{font-size:28px;margin:12px 0 4px;letter-spacing:-.5px}.tl .m{color:var(--mut)}
+.tr{padding:24px;border-left:2px dashed var(--bd);text-align:center;background:#fff}#qr{display:inline-block;padding:8px}#code{font-family:monospace;font-size:12px;color:var(--mut)}
+.row{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--bd);border-radius:22px;padding:24px;transition:.2s}.card:hover{box-shadow:0 12px 30px rgba(15,23,42,.1);transform:translateY(-2px)}
+.card h3{margin:0 0 6px;font-size:19px}.card p{margin:0;color:var(--mut)}
+.ic{width:48px;height:48px;border-radius:14px;background:var(--bg);display:grid;place-items:center;margin-bottom:14px;color:var(--a)}.ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.line .top{display:flex;align-items:center;gap:10px;margin-bottom:26px}.line h3{margin:0}.dot{width:14px;height:14px;border-radius:50%;background:var(--a)}
+.rt{list-style:none;margin:0;padding:0;display:flex}.rt li{flex:1;text-align:center;position:relative;padding-top:26px;font-size:13px;font-weight:600}
+.rt i{position:absolute;top:0;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#fff;border:4px solid var(--a);z-index:1}
+.rt li::before{content:"";position:absolute;top:6px;left:-50%;right:50%;height:4px;background:var(--a)}.rt li:first-child::before{display:none}
+.stat{background:var(--bg);border-radius:22px;padding:8px 24px}.sr{display:flex;align-items:center;padding:16px 0;border-bottom:1px solid var(--bd);font-weight:600}.sr:last-child{border:0}
+.sr i{width:10px;height:10px;border-radius:50%;background:#16a34a;margin-right:12px;box-shadow:0 0 0 4px #dcfce7}.sr b{margin-left:auto;color:#15803d;font-size:14px}
+.ban{background:var(--bg);border-radius:22px;padding:28px;display:flex;gap:18px;align-items:center;margin-top:18px}.ban .ic{margin:0;background:#fff}.ban h3{margin:0 0 2px}.ban p{margin:0;color:var(--mut)}
+footer{background:#0f172a;color:#cbd5e1;margin-top:40px}footer .in{max-width:1120px;margin:auto;padding:44px 20px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h4{color:#fff;margin:0 0 10px}footer a{display:block;padding:3px 0}footer small{display:block;max-width:1120px;margin:auto;padding:18px 20px;border-top:1px solid #1e293b;color:#94a3b8}
+@media(max-width:760px){.util .sw,.nav{display:none}.util .r{margin:0;width:100%;justify-content:space-between}#burger{display:block}
+.nav{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--bd);padding:10px 20px 18px;flex-direction:column;border-radius:0 0 22px 22px;box-shadow:0 20px 30px rgba(0,0,0,.08)}.nav.open{display:flex}.nav a{padding:14px;font-size:17px}
+.mob{display:block;border-top:1px solid var(--bd);margin-top:8px;padding-top:12px}.mob small{color:var(--mut);padding:0 14px;font-weight:700;text-transform:uppercase;font-size:11px}
+.hero .in{padding:44px 20px 110px}.btn.o{margin:10px 0 0}.ticket{flex-direction:column}.tr{border-left:0;border-top:2px dashed var(--bd)}footer .in{grid-template-columns:1fr}.rt li{font-size:11px}}
 </style></head><body>
-<header><div class="bar"><a class="brand" href="/"><img src="https://alerts.citymetro.xyz/logo.png" alt="logo"><span>Republic State Railways</span></a>
+<div class="util"><div class="in"><nav class="sw"><a href="https://rsr.citymetro.xyz" class="on">Republic State Railways</a><a href="https://metrolink.citymetro.xyz" class="">City MetroLink</a><a href="https://mnrr.citymetro.xyz" class="">Metro-North RR</a></nav><div class="r"><a href="tel:+18007277333">☎ 1-800-RSR-333</a><a href="mailto:hello@citymetro.xyz">hello@citymetro.xyz</a></div></div></div>
+<header><div class="bar"><a class="brand" href="/"><img src="https://alerts.citymetro.xyz/logo.png" alt=""><span>Republic State Railways</span></a>
 <button id="burger" aria-label="Menu" aria-expanded="false">☰</button>
-<nav class="sw" id="nav"><a href="https://rsr.citymetro.xyz" class="on">Republic State Railways</a><a href="https://metrolink.citymetro.xyz" class="">City MetroLink</a><a href="https://mnrr.citymetro.xyz" class="">Metro-North RR</a></nav></div></header>
+<nav class="nav" id="nav"><a href="#lines">Lines</a><a href="#status">Service status</a><a href="#plan">Plan</a><a href="#support">Support</a><a class="cta" href="#tickets">Get a ticket</a><div class="mob"><small>Switch railroad</small><a href="https://rsr.citymetro.xyz" class="on">Republic State Railways</a><a href="https://metrolink.citymetro.xyz" class="">City MetroLink</a><a href="https://mnrr.citymetro.xyz" class="">Metro-North RR</a></div></nav></div></header>
+<section class="hero" style="margin:0"><div class="in"><span class="eb">Republic State Railways</span><h1>Express service to the coast.</h1><p>Operator of City Metro Express, serving Pillow Beach, Heartlake City and Los Angeles.</p><a class="btn w" href="#tickets">Get a ticket</a><a class="btn o" href="#lines">View lines</a></div>
+<svg viewBox="0 0 800 200" fill="#fff"><rect x="20" y="60" width="520" height="80" rx="36"/><rect x="560" y="60" width="200" height="80" rx="30"/><rect x="0" y="150" width="800" height="6"/><g fill="#000" opacity=".5"><rect x="60" y="78" width="60" height="30" rx="8"/><rect x="140" y="78" width="60" height="30" rx="8"/><rect x="220" y="78" width="60" height="30" rx="8"/><rect x="300" y="78" width="60" height="30" rx="8"/><rect x="380" y="78" width="60" height="30" rx="8"/><rect x="460" y="78" width="60" height="30" rx="8"/><rect x="600" y="78" width="120" height="30" rx="8"/></g></svg></section>
 <main>
-<section class="hero"><h1>Republic State Railways</h1><p>Intercity rail connecting the Republic’s cities, coast to capital.</p></section>
-<h2 id="ticket">Get a ticket</h2>
-<div class="card" style="margin-top:14px"><form id="f">
-<div><label>From</label><select id="from"></select></div><div><label>To</label><select id="to"></select></div>
-<div><label>Fare</label><select id="type"><option>One-way</option><option>Round trip</option><option>Day pass</option></select></div>
-<div><label>Riders</label><input id="n" type="number" min="1" max="6" value="1"></div>
-<div><button class="btn" type="submit">Generate ticket</button></div></form>
-<div id="msg"></div>
-<div id="tk"><h3 id="rt" style="margin:0"></h3><div id="meta" style="color:#666"></div><div id="qr"></div><div id="code" style="font-family:monospace;font-size:13px;color:#666"></div>
-<div class="row" style="margin-top:14px"><button class="btn k" id="ap">Add to Apple Wallet</button><button class="btn k" id="gp">Add to Google Wallet</button></div></div></div>
-<h2>Plan your trip</h2>
-<div class="grid"><div class="card"><h3>Service alerts</h3><p>Live status for every line, updated around the clock.</p></div><div class="card"><h3>Schedules</h3><p>Weekday, weekend and holiday timetables.</p></div><div class="card"><h3>Fares</h3><p>One-way, round trip and day pass options.</p></div><div class="card"><h3>Accessibility</h3><p>Step-free access, assistance and priority seating.</p></div></div>
-<h2 id="support">Support</h2>
-<div class="grid"><div class="card"><h3>Call us</h3><p><a href="tel:+18007277333"><b>1-800-RSR-333</b></a></p></div><div class="card"><h3>Email</h3><p><a href="mailto:rsr-support@citymetro.xyz"><b>rsr-support@citymetro.xyz</b></a></p></div></div>
-</main><footer>© Republic State Railways · Part of City Metro · <a href="https://alerts.citymetro.xyz">Service alerts</a></footer>
+<div class="book" id="tickets"><h2>Get your ticket</h2><p class="sub" style="margin-bottom:16px">Choose your trip and get a QR ticket instantly.</p>
+<form id="f"><div><label>Line</label><select id="line"></select></div><div><label>From</label><select id="from"></select></div><div><label>To</label><select id="to"></select></div>
+<div><label>Fare</label><select id="type"><option>One-way</option><option>Round trip</option><option>Day pass</option></select></div><div><label>Riders</label><input id="n" type="number" min="1" max="6" value="1"></div>
+<div><button class="btn" style="width:100%" type="submit">Get ticket</button></div></form><div id="msg"></div>
+<div id="tk"><div class="ticket"><div class="tl"><span class="ln" id="tln"></span><h3 id="rt"></h3><div class="m" id="meta"></div>
+<div class="row"><button class="btn k" id="ap"> Add to Apple Wallet</button><button class="btn k" id="gp">Add to Google Wallet</button></div></div>
+<div class="tr"><div id="qr"></div><div id="code"></div></div></div></div></div>
+<section id="lines"><h2>City Metro Express lines</h2><p class="sub">Tap a line to see where it goes.</p><div class="grid"><div class="card line"><div class="top"><span class="dot"></span><h3>Pillow Beach Line</h3></div><ol class="rt"><li><i></i>City Metro Central</li><li><i></i>Station A</li><li><i></i>Pillow Beach</li></ol></div><div class="card line"><div class="top"><span class="dot"></span><h3>Heartlake City Line</h3></div><ol class="rt"><li><i></i>City Metro Central</li><li><i></i>Station A</li><li><i></i>Heartlake City</li></ol></div><div class="card line"><div class="top"><span class="dot"></span><h3>Los Angeles Line</h3></div><ol class="rt"><li><i></i>City Metro Central</li><li><i></i>Station A</li><li><i></i>Los Angeles</li></ol></div></div><div class="ban"><div class="ic"><svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2"><rect x="5" y="3" width="14" height="14" rx="4"/><path d="M8 21l2-4M16 21l-2-4M9 12h6"/></svg></div><div><h3>City Metro Express</h3><p>City Metro Express is operated by Republic State Railways.</p></div></div></section>
+<section id="status"><h2>Service status</h2><p class="sub">Live alerts at <a href="https://alerts.citymetro.xyz" style="text-decoration:underline">alerts.citymetro.xyz</a>.</p><div class="stat"><div class="sr"><i></i>Pillow Beach Line<b>Good service</b></div><div class="sr"><i></i>Heartlake City Line<b>Good service</b></div><div class="sr"><i></i>Los Angeles Line<b>Good service</b></div></div></section>
+<section id="plan"><h2>Plan your trip</h2><p class="sub">Everything you need before you ride.</p><div class="grid">
+<a class="card" href="#tickets"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 8v2h18v-2a2 2 0 0 1 0-8V6H3z"/><path d="M13 6v12" stroke-dasharray="2 2"/></svg></div><h3>Tickets &amp; fares</h3><p>One-way, round trip and day passes.</p></a>
+<a class="card" href="#lines"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Schedules</h3><p>Weekday, weekend and holiday timetables.</p></a>
+<a class="card" href="https://alerts.citymetro.xyz"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/></svg></div><h3>Service alerts</h3><p>Delays, changes and planned work.</p></a>
+<a class="card" href="#support"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M5 9h14M12 9v6l-3 6M12 15l3 6"/></svg></div><h3>Accessibility</h3><p>Step-free access and rider assistance.</p></a></div></section>
+<section id="support"><h2>Need help?</h2><p class="sub">Our team is here to help.</p><div class="grid">
+<a class="card" href="tel:+18007277333"><h3>Call us</h3><p><b style="color:var(--ink);font-size:20px">1-800-RSR-333</b></p></a>
+<a class="card" href="mailto:hello@citymetro.xyz"><h3>Email us</h3><p><b style="color:var(--ink);font-size:20px">hello@citymetro.xyz</b></p></a>
+<a class="card" href="https://alerts.citymetro.xyz"><h3>Live alerts</h3><p>Check service before you travel.</p></a></div></section>
+</main>
+<footer><div class="in"><div><h4>Republic State Railways</h4><p style="margin:0;max-width:340px">Part of the City Metro family of railroads.</p></div><div><h4>Rider info</h4><a href="#tickets">Tickets</a><a href="#lines">Lines</a><a href="#status">Service status</a></div><div><h4>Contact</h4><a href="tel:+18007277333">1-800-RSR-333</a><a href="mailto:hello@citymetro.xyz">hello@citymetro.xyz</a></div></div><small>© Republic State Railways · A City Metro company</small></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-const S=["Republic Central", "Harbor City", "Lakeshore", "Capitol Junction", "Pine Ridge", "Westfield"],K="RSR",$=i=>document.getElementById(i);
+const L={"Pillow Beach Line": ["City Metro Central", "Station A", "Pillow Beach"], "Heartlake City Line": ["City Metro Central", "Station A", "Heartlake City"], "Los Angeles Line": ["City Metro Central", "Station A", "Los Angeles"]},K="RSR",$=i=>document.getElementById(i);
 $('burger').onclick=()=>{const o=$('nav').classList.toggle('open');$('burger').setAttribute('aria-expanded',o);$('burger').textContent=o?'✕':'☰'};
-for(const s of S){$('from').add(new Option(s));$('to').add(new Option(s))}$('to').selectedIndex=1;
+for(const l in L)$('line').add(new Option(l));
+function fill(){const S=L[$('line').value];for(const id of ['from','to']){$(id).length=0;S.forEach(s=>$(id).add(new Option(s)))}$('to').selectedIndex=S.length-1}
+$('line').onchange=fill;fill();
 let T=null;
 $('f').onsubmit=e=>{e.preventDefault();const a=$('from').value,b=$('to').value,m=$('msg');
 if(a===b){m.textContent='Choose two different stations.';return}m.textContent='';
 const r=crypto.getRandomValues(new Uint32Array(2)),id=K+'-'+r[0].toString(36).toUpperCase()+r[1].toString(36).toUpperCase(),
 d=new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-T={from:a,to:b,type:$('type').value,riders:+$('n').value,date:d,code:id};
-$('rt').textContent=a+' → '+b;$('meta').textContent=T.type+' · '+T.riders+' rider'+(T.riders>1?'s':'')+' · '+d;
-$('qr').innerHTML='';new QRCode($('qr'),{text:id+'|'+a+'|'+b+'|'+T.type+'|'+T.riders,width:200,height:200});
+T={line:$('line').value,from:a,to:b,type:$('type').value,riders:+$('n').value,date:d,code:id};
+$('rt').textContent=a+' → '+b;$('tln').textContent=T.line;$('meta').textContent=T.type+' · '+T.riders+' rider'+(T.riders>1?'s':'')+' · '+d;
+$('qr').innerHTML='';new QRCode($('qr'),{text:id+'|'+T.line+'|'+a+'|'+b+'|'+T.type+'|'+T.riders,width:200,height:200});
 $('code').textContent=id;$('tk').style.display='block';$('tk').scrollIntoView({behavior:'smooth'})};
 async function wallet(kind){const m=$('msg');m.textContent='Creating wallet pass…';
 try{const r=await fetch('/api/wallet',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(T)});
