@@ -18,6 +18,7 @@ export default {
   async fetch(request, env) {
     const { pathname } = new URL(request.url);
     if (pathname === '/api/wallet') {
+      if (request.method === 'GET') return Response.json({ ok: true, keyConfigured: !!env.WALLETWALLET_KEY });
       if (request.method !== 'POST') return new Response('Method not allowed', { status: 405 });
       return wallet(request, env);
     }
